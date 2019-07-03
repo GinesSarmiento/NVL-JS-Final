@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf500
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f0\fs36 \cf0 Memoria NVL-JS-Final\
+Gin\'e9s Sarmiento
+\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+
+\f1\b\fs36 HTML:
+\f0\b0\fs24 \
+\
+Para la estructura el html, he separado dos formularios, uno que usaremos como generador y otro en el que se almacenar\'e1n los elementos generados, este \'faltimo, al cargar la p\'e1gina est\'e1 oculto, se mostrar\'e1 al a\'f1adir el primer elemento.\
+Dentro del generador de formularios, he creado una serie de opciones exclusivas (radio-buttons), cada una con su valor diferencial, y dos botones, uno para crear elemento nuevos y otro para crear botones.\
+\
+
+\f1\b\fs36 CSS:
+\f0\b0\fs24 \
+\
+Dentro de es archivo de estilo he asignado diferentes propiedades tanto al formulario generador como al generado por el usuario.\
+\
+
+\f1\b\fs36 JS:
+\f0\b0\fs24 \
+\
+Partimos de dos funciones, una asociada a cada bot\'f3n, una crea elementos y la otra botones.\
+\
+
+\f1\b Funci\'f3n para crear elementos:
+\f0\b0 \
+Obtiene como par\'e1metro el valor de la opci\'f3n seleccionada por el usuario.\
+El primer paso es ejecutar la funci\'f3n que crea el t\'edtulo del formulario y lo hace visible.\
+El siguiente paso es obtener el nombre que el usuario le quiere dar al elemento que quiere generar.\
+A partir de ah\'ed, obtenemos el nodo del formulario y creamos los elementos comunes a todos los tipos de control, acto seguido separamos el c\'f3digo en funci\'f3n del tipo de elemento que se vaya a crear.\
+\
+Los elementos texto, n\'famero y email son bastante sencillos, s\'f3lo tenemos que crear el elemento input, a\'f1adir las clases necesarias y asignar el tipo de elemento que es.\
+\
+En el caso de los elementos de lista, adem\'e1s de las pautas de los elementos anteriores, necesitamos saber cu\'e1ntas opciones quiere crear el usuario y el nombre asignado a cada una de ellas, adem\'e1s estas opciones tienen que estar englobadas dentro de un elemento select. He a\'f1adido tambi\'e9n una forma de comprobar que el usuario introduce un n\'famero entero a la hora de indicar el n\'famero de opciones, esto evita errores y avisa al usuario del error cometido.\
+\
+El caso de las opciones de selecci\'f3n exclusivas y no exclusivas, al igual que en la lista desplegable, el usuario debe introducir el n\'famero de opciones y el nombre de estas. Como son dos opciones (exclusivas y no exclusivas) muy similares, s\'f3lo cambia el tipo del elemento (checkbox o radio), he decidido crear una funci\'f3n, que con unos par\'e1metros dados, crear\'e1 un tipo u otro de elementos de selecci\'f3n. \
+\
+Por \'faltimo, una vez creado el elemento, sea del tipo que sea, se incluye en el formulario. Aqu\'ed decid\'ed hacer una diferenciaci\'f3n en funci\'f3n de si ya existe un bot\'f3n de env\'edo o no, en el primer caso incluye el elemento nuevo antes del bot\'f3n, si no existe bot\'f3n, lo a\'f1ade al final del formulario, esto he decidido que sea as\'ed ya que el \'faltimo elemento de un formulario suele ser el bot\'f3n de enviar, pero no tiene por que ser el \'faltimo del que se acuerde el usuario.\
+\
+
+\f1\b Funci\'f3n para crear el t\'edtulo:
+\f0\b0 \
+Es muy sencilla, lo primero, hace el formulario visible, ya que esta funci\'f3n se llama tanto al crear un elemento como un bot\'f3n, no sabemos por d\'f3nde empezar\'e1 el usuario.\
+El segundo paso es a\'f1adir el texto obtenido del usuario a un elemento h2 ya creado en el html\
+\
+
+\f1\b Funci\'f3n para crear botones:
+\f0\b0 \
+Primero llama a la funci\'f3n para crear el t\'edtulo, obtiene el nombre del bot\'f3n y si el usuario pulsa aceptar lo crea con todos los datos necesarios.\
+\
+\
+\
+}
